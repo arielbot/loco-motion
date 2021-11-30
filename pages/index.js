@@ -94,7 +94,9 @@ export default function Home() {
           {/* Example 5: Air animation setting initial opacity */}
           <motion.a initial = {{y: -300, opacity: 0}}
             animate={{
+              borderRadius: "50%",
               width: "200px",
+              height: "200px",
               opacity: 1,
               x: 20,
               y: 0, 
@@ -109,6 +111,24 @@ export default function Home() {
             href="https://bubblespop.netlify.app/" className={`${styles.card} ${styles.air}`}  target="_blank">
             <h2>Air</h2>
           </motion.a>
+          
+          {/* Alternate animation with keyframes */}
+          {/* <motion.a
+            animate={{
+              scale: [1, 2, 2, 1, 1],
+              rotate: [0, 0, 270, 270, 0],
+              borderRadius: ["20%", "70%", "50%", "50%", "20%"],
+            }}
+            transition={{
+              duration: 8,
+              delay: 0.3,
+              repeat: Infinity,
+              repeatType: "reverse",
+            }}
+            href="https://bubblespop.netlify.app/" className={`${styles.card} ${styles.air}`}  target="_blank">
+            <h2>Air</h2>
+          </motion.a> */}
+
         </div>
         
         {/* Example 5: Attack animation on click */}
