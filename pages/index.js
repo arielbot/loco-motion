@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 import { motion } from "framer-motion"
 import { useState } from 'react'
@@ -29,10 +30,11 @@ export default function Home() {
       transition: {
         delay: 1,
         duration: 0.5,
-        // ease: [0.17, 0.67, 0.83, 0.67],
-        ease: "circOut",
+        ease: [0.17, 0.67, 0.83, 0.67],
+        // ease: "circOut",
         repeat: Infinity,
         repeatType: "reverse"
+        // repeatType set to loop by default, also can use reverse and mirror
       }
     }
   };
@@ -55,10 +57,12 @@ export default function Home() {
           Long ago, the four nations lived together in<br />
           
           {/* Example 1: heading animation using hover */}
-          <motion.a className={styles.harmony} whileHover={
+          <motion.div className={styles.harmony} whileHover={
               {fontSize: "120px"}
-            }
-          href="https://avatar.fandom.com/wiki/Official_Avatar_Aang_Fan_Club" target="_blank">harmony</motion.a>
+            }>
+            <Link href="/air" target="_blank">harmony
+            </Link>
+          </motion.div>
 
         </h1>
 
@@ -72,7 +76,7 @@ export default function Home() {
           
           {/* Example 3: Earth animation using transitions */}
           <motion.a animate={{
-              scale: 1.5,
+              scale:`${10}%`,
               x: -50
             }}
             transition={{
@@ -102,11 +106,11 @@ export default function Home() {
               y: 0, 
             }}
             transition={{
-              type: "spring",
+              type: "tween",
               duration: 3,
               delay: 0.3,
               repeat: Infinity,
-              repeatType: "mirror",
+              repeatType: "reverse",
             }}
             href="https://bubblespop.netlify.app/" className={`${styles.card} ${styles.air}`}  target="_blank">
             <h2>Air</h2>
