@@ -8,7 +8,7 @@ export default function Air() {
       <h1 className={styles.title}>
         Air Temple
       </h1>
-      <Image src="/images/air_temple.png" alt="Air Temple" width={500} height={500} />
+      <Image src="/gallery/air_temple.png" alt="Air Temple" width={500} height={500} />
     </main>
   )
 }
